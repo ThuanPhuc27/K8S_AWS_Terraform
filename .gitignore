@@ -1,0 +1,4 @@
+terraform/seoul-dev/*.backup
+*.terraform
+*.hcl
+*.tfstate
