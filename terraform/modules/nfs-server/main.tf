@@ -39,7 +39,7 @@ resource "aws_instance" "nfs-server" {
               sudo chmod -R 777 /data
 
               UUID=$(blkid -s UUID -o value "/dev/xvdf")
-              echo "UUID=${UUID} /data ext4 defaults,nofail 0 2" | sudo tee -a /etc/fstab
+              echo "UUID=$${UUID} /data ext4 defaults,nofail 0 2" | sudo tee -a /etc/fstab
 
               sudo apt install nfs-server -y
               echo "/data *(rw,sync,no_subtree_check)" | sudo tee -a /etc/exports
